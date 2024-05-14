@@ -1,0 +1,23 @@
+/**
+ * WRAPPER
+ * Sets a max width, adds a consisten gutter and horizontally
+ * centers the contents
+ */
+// .wrapper {
+//   max-width: 90rem;
+//   margin-inline: auto;
+//   position: relative;
+// }
+
+.grid-alyouts {
+  display: grid;
+  grid-template-columns: var(--grid-cols, 1fr);
+  grid-template-rows: var(--grid-rows, 1fr);
+  grid-gap: var(--layout-gap, 1rem);
+  & > * {
+    --item-col: 1 / -1;
+    --item-row: auto;
+    grid-column: var(--item-col);
+    grid-row: var(--item-row);
+  }
+}

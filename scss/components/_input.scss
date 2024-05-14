@@ -1,0 +1,22 @@
+.input {
+    background: var(--bg,var(--clr-neutral-200));
+    padding: 1px;
+    border-radius: .5rem;  
+    margin-top: .5rem;
+    input {
+        width: 100%;
+        font-size: var(--fs-300);
+        letter-spacing: 1.5px;
+        padding: .75rem 1rem;
+        color: var(--clr-neutral-300);
+        border-radius: inherit;  
+        outline: none;
+    }
+    &.error {
+        --bg: var(--clr-danger);
+    }
+    &:has(input:focus) {
+        --bg: linear-gradient(var(--clr-gradient));
+    }
+    
+}

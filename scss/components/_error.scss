@@ -1,0 +1,14 @@
+.error-message {
+    visibility: hidden;
+    color: var(--clr-danger);
+    margin-top: .5rem;
+}
+
+[data-error] .error-message {
+    display: block;
+    visibility: visible;
+}
+    
+
+
+

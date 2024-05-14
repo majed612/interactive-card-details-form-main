@@ -1,0 +1,27 @@
+@use '../settings/mixins/mq' as *;
+.cards-wrap {
+  grid-template-columns: minmax(1.5rem, 5rem) minmax(230px, 1fr) minmax(1.5rem, 5rem);
+  row-gap: var(--cards-gap, 1.5rem);
+  align-self: center;
+
+  .card--front {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 2;
+    z-index: 1;
+  }
+  .card--back {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 2;
+  }
+  
+  @include mq('lg') {
+    --cards-gap: 2.25rem;
+    
+    .card--front {
+        grid-row: 1;
+    }
+    .card--back {
+        grid-row: 2;
+    }
+  }
+}

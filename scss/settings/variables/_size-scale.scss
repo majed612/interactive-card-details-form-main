@@ -1,0 +1,6 @@
+$fs: (
+    "100": clamp(.75rem, calc(1vw + 0.15rem), .85rem),
+    "200": .75rem,
+    "300": 1rem,
+    "400": clamp(1.125rem, calc(2vw + 0.125rem), 1.75rem),
+)

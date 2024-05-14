@@ -1,0 +1,55 @@
+.fs-100 {
+    font-size: var(--fs-100);
+}
+.fs-200 {
+    font-size: var(--fs-200);
+}
+.fs-300 {
+    font-size: var(--fs-300);
+}
+.fs-400 {
+    font-size: var(--fs-400);
+}
+.clr-primary {
+    color: var(--clr-primary-100);
+}
+.clr-neutral {
+    color: var(--clr-neutral-300);
+}
+.uppercase {
+    text-transform: uppercase;
+}
+
+.flow > * + * {
+    margin-top: var(--flow, 1rem);
+}
+
+.main-container {
+    position: relative;
+    margin-right: 2rem;
+    overflow-x: hidden;
+}
+
+.grid {
+    display: grid;
+    row-gap: var(--gap,1rem);
+}
+
+.even-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap, 1rem);
+}
+
+.flex {
+    --gap: .75rem;
+    display: flex;
+    gap: var(--gap);
+}
+.box {
+    padding: var(--box-offset,1.25rem);
+}
+
+.radius {
+    border-radius: var(--radius-size, .5rem);
+}

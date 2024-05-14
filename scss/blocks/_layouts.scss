@@ -1,0 +1,23 @@
+@use '../settings/mixins/mq' as *;
+.site-wrap {
+    max-width: 1440px;
+    min-height: 100vh;
+    grid-template-columns: var(--site-grid-cols, minmax(1.5rem, 1fr) minmax(auto, 24em) minmax(1.5rem, 1fr));
+    grid-template-rows: var(--site-grid-rows ,auto 1fr);
+
+    & > *:nth-child(odd) {
+        grid-column: var(--odd-item-col, 1 / -1);
+    }
+    & > *:nth-child(even) {
+        grid-column: 2;
+    }
+  
+    @include mq('lg') {
+        --site-grid-cols: 50%  40%;
+        --site-grid-rows: 1fr;
+        --odd-item-col: 1;
+
+        place-content: space-between;
+    }
+}
+

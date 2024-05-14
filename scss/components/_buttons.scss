@@ -1,0 +1,16 @@
+.btn {
+    width: 100%;
+    color: var(--clr-neutral-100);
+    background: var(--btn-bg, var(--clr-primary-100));
+    padding: 1em 1.5em;
+    border-radius: .5rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin-top: 2rem;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        --btn-bg: var(--clr-primary-200);
+    }
+}
+

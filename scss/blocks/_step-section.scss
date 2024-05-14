@@ -1,0 +1,36 @@
+@use '../settings/mixins/mq' as *;
+.step {
+    position: relative;
+    max-width: 24em;
+    inset: 0;
+    position: absolute;
+    transform: translateX(var(--x-offset, -120%));
+    transition: transform .5s  ease-in-out;
+
+    &:not([hidden]) {
+        display: flex;
+        align-items: var(--align-v, stretch);
+    }
+    
+    &--wrap {
+        width: 100%;
+    }
+
+    &.thanks {
+        --x-offset: 150%;
+        text-align: center;
+        img {
+            margin: 0 auto;
+        }
+    }
+       
+    &.active {
+        --x-offset: 0;
+    }
+
+    @include mq('lg') {
+        --y-offset: -50%;
+        --flow: 1.5rem;
+        --align-v: center;
+    }
+}

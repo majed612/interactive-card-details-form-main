@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet"> 
+  <!-- link style -->
+  <link rel="stylesheet" href="scss/style.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="site-wrap grid">
+    <aside class="sidebar grid">
+        <div class="cards-wrap grid">
+            <div class="card card--front box grid">
+                <img class="card--logo" src="images/card-logo.svg" alt="payment card logo" width="50" height="auto" aria-hidden="true">
+                <p class="card--num fs-400" data-card-info="number">0000 0000 0000 0000</p>
+                <p class="card--name fs-100 uppercase" data-card-info="name">Jane Appleseed</p>
+                <p  class="card--date fs-100"><span data-card-info="month">00</span>/<span data-card-info="year">00</span></p>
+            </div>
+            <div class="card card--back grid">
+                <p  class="card--cvc fs-100" data-card-info="cvc">000</p>
+            </div>
+        </div>
+    </aside>
+    <main class="main-container">
+        <div class="form step active">
+            <form class="step--wrap flow ">
+                <div class="form--group ">
+                    <label for="name" class="clr-primary fs-200">Cardholder Name</label>
+                    <div class="input">
+                        <input id="name" type="text" placeholder="Jane Appleseed" maxlength="55" pattern="[a-z .'-,]+">
+                    </div>
+                    <span id="err1" class="error-message fs-200" hidden>Wrong format, number only</span>
+                </div>
+                <div class="form--group">
+                    <label for="number" class="clr-primary fs-200">Card number</label>
+                    <div class="input">
+                        <input id="number" type="tel" maxlength="19" placeholder="e.g 1234 5678 9123 0000" pattern="[0-9 ]{19}" aria-errormessage="err2">
+                    </div>
+                    <span id="err2" class="error-message fs-200" hidden>Wrong format, number only</span>
+                </div>
+                <div class="even-cols">
+                    <fieldset class="form--group exp-date">
+                        <legend class="clr-primary fs-200">Exp. Date (MM/YY)</legend>
+                        <div class="flex">
+                            <div class="input">
+                                <input id="month" type="number" min="1" max="12" aria-errormessage="err3" placeholder="MM" aria-label="month">
+                            </div>
+                            <div class="input">
+                                <input id="year" type="number" min="20" max="30" aria-errormessage="err3" placeholder="YY" aria-label="year"/>
+                            </div>
+                        </div>
+                        <span id="err3" class="error-message fs-200" hidden >Wrong format, number only</span>
+                    </fieldset>
+                
+                    <div class="form--group cvc">
+                        <label class="clr-primary fs-200" for="cvc">CVC</label>
+                        <div class="input">
+                            <input type="number" id="cvc" min="100" max="999" aria-errormessage="err4" placeholder="e.g. 123"/>
+                        </div>
+                        <span id="err4" class="error-message fs-200" hidden>Wrong format, number only</span>
+                    </div>
+                </div>
+                    
+                <button type="button" class="btn btn--primary" data-submit>Confirm</button>
+            </form>
+        </div>
+        <div class="step thanks" hidden>
+            <div class="step--wrap flow">
+                <img src="images/icon-complete.svg" alt="" aria-hidden="true">
+                <div class="flow">
+                <h2 class="uppercase clr-primary">Thank you!</h2>
+                <p class="clr-neutral">We've added your card detaiels</p>
+                </div>
+                <button type="button" class="btn btn--primary" data-confirm>Continue</button>
+            </div>
+        </div>
+    </main>
+  </div>
+</body>
+</html>

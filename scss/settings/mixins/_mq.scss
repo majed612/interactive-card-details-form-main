@@ -1,0 +1,11 @@
+@use '../variables/index' as *;
+
+@mixin mq($key) {
+
+    $breakpoint: map-get($breakpoints , $key );
+    
+    @media #{$breakpoint} {
+        @content;
+    }
+        
+}

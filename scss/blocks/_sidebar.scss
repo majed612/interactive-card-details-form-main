@@ -1,0 +1,17 @@
+@use '../settings/mixins/mq' as *;
+.sidebar {
+    grid-template-columns: var(--sidebar-cols, subgrid);
+    background-image: url('../images/bg-main-mobile.png');
+    background-repeat: no-repeat;
+    background-size: 100% 240px;
+    padding-block: 2rem;
+
+    .cards-wrap {
+        grid-column: 2;
+    }
+    @include mq('lg') {
+        --sidebar-cols: minmax(5rem, 10rem) minmax(25em, 35em);
+        background-image: url('../images/bg-main-desktop.png');
+        background-size: min(70%, 456px) 100%;
+    }
+}

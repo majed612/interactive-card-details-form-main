@@ -1,0 +1,12 @@
+@use 'variables/index' as *;
+
+
+$config: (
+  'css-vars': (
+    'clr': $colors,
+    'fs': $fs,
+    )
+)
+
+
+

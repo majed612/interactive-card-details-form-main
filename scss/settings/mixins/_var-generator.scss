@@ -1,0 +1,41 @@
+@use 'mq' as *;
+@use '../config' as *;
+@use '../variables/size-scale' as *;
+
+@mixin fs-token($fs, $suf) {
+    @each $prop , $val in $fs {
+        @if  $prop =='sm' {
+            @each $property , $value in $val {
+                --#{$suf}-#{$property}: #{ $value };             
+            }
+        }@else {
+            @include mq($prop){
+              @each $property , $value in $val {
+                --#{$suf}-#{$property}: #{ $value };             
+              }
+            }
+        }
+    }
+
+}
+
+
+@mixin var-generator() {
+    $css-vars: map-get($config, 'css-vars');
+    
+    @if($css-vars){      
+        @each $key , $items in $css-vars {
+            // @if $key =='fs'  {      
+            //     @include fs-token($items, $key);
+                
+            // }@else {
+            // }
+            @each $property , $value in $items {
+                --#{$key}-#{$property}: #{ $value };             
+            }
+        }
+    } 
+}
+
+
+
